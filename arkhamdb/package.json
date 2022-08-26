@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "arkhamdb",
   "title": "ArkhamDB",
-  "description": "Search Arkham Horror LCG decks and cards from Raycast",
+  "description": "Search Arkham Horror LCG decks and cards",
   "icon": "command-icon.png",
   "author": "funkymonkeymonk",
   "categories": [
@@ -12,8 +12,8 @@
   "commands": [
     {
       "name": "card",
-      "title": "search card",
-      "description": "Search cards",
+      "title": "Search Cards",
+      "description": "Search cards in ArkhamDB",
       "mode": "view"
     }
   ],

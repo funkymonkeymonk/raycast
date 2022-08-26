@@ -13,12 +13,11 @@ export default function Command() {
 //TODO: Get better images
 //TODO: Get an actual neutral image
   const CLASS_ICONS = {
-    guardian: {source: "guardian.png", mask: Image.Mask.Circle},
-    mystic: {source: "mystic.png", mask: Image.Mask.Circle},
-    neutral: {source: "neutral.png", mask: Image.Mask.Circle},
-    rogue: {source: "rogue.png", mask: Image.Mask.Circle},
-    seeker: {source: "seeker.png", mask: Image.Mask.Circle},
-    survivor: {source: "survivor.png", mask: Image.Mask.Circle}
+    guardian: {source: "class/guardian.png", mask: Image.Mask.Circle},
+    mystic: {source: "class/mystic.png", mask: Image.Mask.Circle},
+    rogue: {source: "class/rogue.png", mask: Image.Mask.Circle},
+    seeker: {source: "class/seeker.png", mask: Image.Mask.Circle},
+    survivor: {source: "class/survivor.png", mask: Image.Mask.Circle}
   };
 
   function CardListItem(props: any) {
@@ -43,11 +42,14 @@ export default function Command() {
   }
 
   //TODO: Add additional search filters
+  //TODO: Enable/disable spoiler text for encounter cards
+  //Set encounter=1 in the query to return encounter cards too
+  //Figure out how to make a damn icon for this.
   async function getCardData(query: string) {
     async function callArkhamDB() {
       setIsLoading(true);
       const API_ROOT = 'https://www.arkhamdb.com'
-      const PATH = '/api/public/cards'
+      const PATH = '/api/public/cards?encounter=0'
       return got.get(API_ROOT + PATH).json()
     }
 
